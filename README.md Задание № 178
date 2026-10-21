@@ -1,0 +1,38 @@
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
+    namespace Program178
+    {
+    internal class Program
+    {
+        static void Main()
+        {
+            Console.Write("Римская цифра (I, V, X, L, C, D, M): ");
+            string  roman = Console.ReadLine()?.Trim().ToUpper();
+            if (string.IsNullOrEmpty(roman) || roman.Length != 1)
+            {
+                Console.WriteLine("Ошибка.");
+                return;
+            }
+
+            int value;
+            switch (roman[0])
+            {
+                case 'I': value = 1; break;
+                case 'V': value = 5; break;
+                case 'X': value = 10; break;
+                case 'L': value = 50; break;
+                case 'C': value = 100; break;
+                case 'D': value = 500; break;
+                case 'M': value = 1000; break;
+                default:
+                    Console.WriteLine("Неверная римская цифра.");
+                    return;
+            }
+            Console.WriteLine(value);
+        }
+    }
+    }
